@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_application/modeles/layout/layout_screen.dart';
+import 'package:islami_application/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,8 +25,13 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
+var provider=Provider.of<MyProvider>(context);
+    return Image.asset(
+ provider.mode==ThemeMode.light?
+ "assets/images/splash.png":
+        "assets/images/bg_dark.png"
 
-    return Image.asset("assets/images/splash.png");
+    );
 
 
 

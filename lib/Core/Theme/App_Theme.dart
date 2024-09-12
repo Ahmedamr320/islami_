@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+Color primaryColor=Color(0xffB7935F);
+ Color yellowColor=Color(0xffFACC1D);
+ Color primary_darckColor=Color(0xff141A2E);
+ Color blackColor=Colors.black;
 class AppTheme {
   static Color primaryColor=Color(0xffB7935F);
   static Color yellowColor=Color(0xffFACC1D);
@@ -28,8 +31,21 @@ class AppTheme {
         unselectedItemColor: const Color(0xffF8F8F8),
         showUnselectedLabels: false,
         backgroundColor: primaryColor,
-      )
+      ),
+      textTheme: TextTheme(
+  bodyLarge: GoogleFonts.elMessiri(
+  fontWeight:FontWeight.w700,fontSize: 30,
+      color: Colors.black
+  ),
+      bodyMedium:  GoogleFonts.elMessiri(
+  fontWeight:FontWeight.w600,fontSize: 25,
+  color: Colors.black
+  ),
+
+
+  ),
       );
+
 
 
     static ThemeData darkTheme =ThemeData(
@@ -40,10 +56,10 @@ class AppTheme {
       fontFamily: GoogleFonts.elMessiri().fontFamily,
       appBarTheme:  AppBarTheme(
         backgroundColor: Colors.transparent,
-
         centerTitle: true,
         elevation: 0,
-        titleTextStyle:GoogleFonts.elMessiri(   fontSize: 30,fontWeight: FontWeight.bold,color: const Color(0xff242424),)
+        titleTextStyle:GoogleFonts.elMessiri(   fontSize: 30,
+          fontWeight: FontWeight.bold,color:  Colors.white,)
 
       ),
 

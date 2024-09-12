@@ -1,4 +1,12 @@
 {
-  "title":"Title",
-  "desc": "Desc"
+  "islami": "Islami",
+  "title":"Titel",
+  "desc": "Des",
+  "ahadeth": "Ahadeth",
+  "language": "Language",
+  "sura_name": "SuraName ",
+  "dark": "Dark",
+  "light": "Light",
+  "arabic": "Arabic",
+  "english": "English"
 }

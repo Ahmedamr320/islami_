@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_application/hadeth%20model.dart';
+import 'package:islami_application/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadithsDetales extends StatelessWidget {
   static String routeName = "HadethScreen";
@@ -13,15 +15,19 @@ class HadithsDetales extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var model = ModalRoute .of(context) ?.settings.arguments as HadethModel;
-
+    var provider=Provider.of<MyProvider>(context);
     return Expanded(
       child: Container(
           decoration: BoxDecoration(image: DecorationImage(
-          image: AssetImage("assets/images/back_ground.png"))),
+          image: AssetImage(provider.mode==ThemeMode.light?
+              "assets/images/back_ground.png":
+          "assets/images/home_dark_background.png",
+          )
+          )),
           child: Scaffold(backgroundColor:  Colors.transparent,
             appBar: AppBar(backgroundColor: Colors.transparent,
               title: Text(model.titel.tr(),
-                style: GoogleFonts.elMessiri(fontSize: 25),),
+                style: GoogleFonts.elMessiri(fontSize: 25,color: Colors.white),),
       
             ),
             body: ListView.builder(itemBuilder: (context, index) {

@@ -1,11 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:islami_application/hadeth%20model.dart';
+import 'package:provider/provider.dart';
 
 import '../../../HadithsDetales.dart';
+import '../../../provider/my_provider.dart';
 
 class HadethScreen extends StatefulWidget {
   List<HadethModel> allAhadeth = [];
@@ -19,6 +22,8 @@ class _HadethScreenState extends State<HadethScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
+
     if (allAhadrth.isEmpty) {
 redaHadethFile();
     }
@@ -27,6 +32,7 @@ redaHadethFile();
       children: [
         Image.asset(
           "assets/images/hadith_header.png",
+
           height: 227,
         ),
         Divider(
@@ -39,7 +45,7 @@ redaHadethFile();
             SizedBox(
               height: 39,
               child: Text(
-                "الحديث",
+                "ahadeth".tr(),
                 textAlign: TextAlign.left,
                 style: GoogleFonts.elMessiri(
                   fontSize: 28,

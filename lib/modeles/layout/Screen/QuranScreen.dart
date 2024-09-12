@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,7 +29,7 @@ List<String> suraNames = [
  Row(mainAxisAlignment: MainAxisAlignment.center,
    children: [
      SizedBox(height: 39,
-       child: Text("إسم السورة",
+       child: Text("sura_name".tr(),
          textAlign: TextAlign.left,
        style: GoogleFonts.elMessiri(
          fontSize: 28,fontWeight: FontWeight.w500,

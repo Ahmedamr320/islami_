@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_application/Core/Widgets/bg_Wigidt.dart';
@@ -6,6 +7,8 @@ import 'package:islami_application/modeles/layout/Screen/QuranScreen.dart';
 import 'package:islami_application/modeles/layout/Screen/RadioScreen.dart';
 import 'package:islami_application/modeles/layout/Screen/Sebha_Screen.dart';
 import 'package:islami_application/modeles/layout/Screen/Setting_Screen.dart';
+
+import '../../Core/Theme/App_Theme.dart';
 
 class LayoutScreen extends StatefulWidget {
   static String routeName ="Layout";
@@ -25,8 +28,8 @@ class _LayoutScreenState extends State<LayoutScreen> {
     SettingScreen(),
   ];
   List<String> titles =[
-    "Islami",
-    "Hedeth",
+    "islami".tr(),
+    "ahadeth".tr(),
     "Radio",
     "Sebha",
     "Settings",
@@ -37,9 +40,11 @@ class _LayoutScreenState extends State<LayoutScreen> {
   Widget build(BuildContext context) {
     return BgWidgit(
       child: Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(elevation: 0,
         title: Text(
-          titles[SelectedIndex],
+          titles[SelectedIndex], style: TextStyle(
+            fontWeight: FontWeight.bold,
+           ),
         )
         ),
 

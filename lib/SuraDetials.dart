@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_application/provider/my_provider.dart';
 import 'package:islami_application/suramodel.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetails extends StatefulWidget {
   static String routeName = "SuraDetails";
@@ -18,6 +20,8 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
+
     var model = ModalRoute.of(context)?.settings.arguments as SuraModel;
     if (vereses.isEmpty) {
       loadSuraFile(model.index);
@@ -25,7 +29,9 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/back_ground.png"))),
+                image: AssetImage(provider.mode==ThemeMode.light?
+                "assets/images/back_ground.png":
+                "assets/images/home_dark_background.png",))),
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
